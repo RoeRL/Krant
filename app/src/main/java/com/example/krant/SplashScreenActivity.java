@@ -18,7 +18,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 try {
                     sleep(3 * 1000);
 
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(intent);
                     finish();
 
@@ -29,6 +29,5 @@ public class SplashScreenActivity extends AppCompatActivity {
         };
 
         background.start();
-
     }
 }
