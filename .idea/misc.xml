@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_main.xml" value="0.19537037037037036" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/fragment_account.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/fragment_home.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/fragment_note.xml" value="0.19537037037037036" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.209375" />
         <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
       </map>
