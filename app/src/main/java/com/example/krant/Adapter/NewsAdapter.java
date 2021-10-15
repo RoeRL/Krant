@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.krant.Model.NewsModel;
@@ -18,12 +19,20 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+import javax.security.auth.callback.Callback;
+
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
 
     ArrayList<NewsModel> listData;
+    Callback callback;
 
-    public NewsAdapter(ArrayList<NewsModel> dataArrayList) {
-        listData = dataArrayList;
+    public interface Callback{
+        void onClick(int position);
+    }
+
+    public NewsAdapter(ArrayList<NewsModel> dataArrayList, Callback callback) {
+        this.listData = dataArrayList;
+        this.callback = callback;
     }
 
     @NonNull
@@ -37,7 +46,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     @Override
     public void onBindViewHolder(@NonNull NewsAdapter.NewsViewHolder holder, int position) {
 
-        holder.txt_name.setText(listData.get(position).getName());
+        holder.txt_title.setText(listData.get(position).getTitle());
         holder.txt_description.setText(listData.get(position).getDescription());
         Picasso.get()
                 .load(listData.get(position).getImage())
@@ -51,16 +60,25 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
     public class NewsViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView txt_name;
+        private TextView txt_title;
         private TextView txt_description;
         private ImageView img_image;
+        private CardView cardView;
 
         public NewsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            txt_name = itemView.findViewById(R.id.txt_name_news);
+            txt_title = itemView.findViewById(R.id.txt_title_news);
             txt_description = itemView.findViewById(R.id.txt_description_news);
             img_image = itemView.findViewById(R.id.img_image_news);
+            cardView = itemView.findViewById(R.id.id_cardview);
+
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    callback.onClick(getLayoutPosition());
+                }
+            });
         }
     }
 }
