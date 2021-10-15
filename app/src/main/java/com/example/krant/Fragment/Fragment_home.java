@@ -1,6 +1,5 @@
 package com.example.krant.Fragment;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -43,20 +42,20 @@ public class Fragment_home extends Fragment {
 
     private void getData(){
         dataArrayList = new ArrayList<>();
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
-        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.krant_logo)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
+        dataArrayList.add(new NewsModel("this is a title", "this is a description", String.valueOf(R.drawable.logo_krant1)));
     }
 }
