@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Krant">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NoteActivity"
+            android:exported="true" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true" />
         <activity
