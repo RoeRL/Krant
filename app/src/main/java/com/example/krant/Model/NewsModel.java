@@ -2,22 +2,22 @@ package com.example.krant.Model;
 
 public class NewsModel {
 
-    private String name;
+    private String title;
     private String description;
     private String image;
 
-    public NewsModel(String name, String description, String image) {
-        this.name = name;
+    public NewsModel(String title, String description, String image) {
+        this.title = title;
         this.description = description;
         this.image = image;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getDescription() {
