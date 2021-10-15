@@ -3,61 +3,80 @@ package com.example.krant;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-import com.example.krant.Fragment.Fragment_account;
-import com.example.krant.Fragment.Fragment_home;
-import com.example.krant.Fragment.Fragment_note;
+import com.example.krant.Adapter.NewsAdapter;
+import com.example.krant.Model.NewsModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private BottomNavigationView bottomNavigationView;
+    private RecyclerView recyclerView;
+    private NewsAdapter adapter;
+    private ArrayList<NewsModel> dataArraylist;
+
+    private Button btn_note;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        config();
 
-        getFragmentPage(new Fragment_home());
+        recyclerView = findViewById(R.id.id_recyclerview);
+        btn_note = findViewById(R.id.btn_note);
 
+        getData();
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        adapter = new NewsAdapter(dataArraylist);
 
-                Fragment fragment = null;
-
-                switch (item.getItemId()){
-                    case R.id.page_1 :
-                        fragment = new Fragment_home();
-                        break;
-
-                    case R.id.page_2 :
-                        fragment = new Fragment_note();
-                        break;
-
-                    case R.id.page_3:
-                        fragment = new Fragment_account();
-                        break;
-                }
-
-                return getFragmentPage(fragment);
-            }
-        });
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(layoutManager);
     }
 
-    private boolean getFragmentPage(Fragment fragment){
-        if (fragment != null){
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, fragment)
-                    .commit();
-            return true;
-        }
-        return false;
+    private void config() {
+        setExitSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
+        getWindow().setSharedElementsUseOverlay(false);
+    }
+
+    public void noteClick(View view){
+        Intent intent = new Intent(getApplicationContext(), NoteActivity.class);
+        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(this, btn_note, "note_transition").toBundle();
+        startActivity(intent, bundle);
+    }
+
+    public void profilClick(View view){
+        Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+        Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(this, btn_note, "profile_transition").toBundle();
+        startActivity(intent, bundle);
+    }
+
+    private void getData(){
+        dataArraylist = new ArrayList<>();
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataArraylist.add(new NewsModel("title", "description", "image"));
     }
 }

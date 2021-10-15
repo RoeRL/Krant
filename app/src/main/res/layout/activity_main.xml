@@ -6,17 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <Button
+        android:id="@+id/btn_note"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_navigation_menu"
-        android:layout_alignParentBottom="true"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:onClick="noteClick"
+        android:transitionName="note_transition"
+        android:text="NOTE" />
+
+    <Button
+        android:id="@+id/btn_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_note"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:onClick="profilClick"
+        android:transitionName="profile_transition"
+        android:text="PROFILE" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/btn_profile">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>
