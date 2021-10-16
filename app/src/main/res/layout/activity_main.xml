@@ -1,22 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/main_bg_ellipse">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_navigation"/>
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="35dp"
+
+        android:text="WELCOME"
+        android:textSize="36sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:menu="@menu/bottom_navigation_menu"
-        android:layout_alignParentBottom="true"/>
+        >
 
-</RelativeLayout>
+        <Button
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="13dp"
+            android:layout_width="169dp"
+            android:layout_height="61dp"
+
+            android:background="@drawable/main_rounded_button_1"
+
+            android:text="Profile"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+        <Button
+            android:layout_marginTop="90dp"
+            android:layout_marginLeft="228dp"
+            android:layout_width="169dp"
+            android:layout_height="61dp"
+
+            android:background="@drawable/main_rounded_button_1"
+
+            android:text="Notes"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_marginTop="90dp"
+        android:layout_marginLeft="113dp"
+        android:layout_width="184dp"
+        android:layout_height="42dp"
+
+        android:background="@drawable/main_rounded_button_2"
+
+        android:text="Berita Terkini"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"/>
+
+    <RelativeLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_bg_rectangle"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+
+
+
+
+</LinearLayout>

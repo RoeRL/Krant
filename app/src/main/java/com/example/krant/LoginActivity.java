@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private com.google.android.material.textfield.TextInputLayout input_username;
-    private com.google.android.material.textfield.TextInputLayout input_password;
+    private EditText input_username;
+    private EditText input_password;
     private Button btn_login;
 
     @Override
@@ -30,8 +30,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View view) {
 
-        String username = input_username.getEditText().getText().toString();
-        String password = input_password.getEditText().getText().toString();
+        String username = input_username.getText().toString();
+        String password = input_password.getText().toString();
 
         if (view.equals(btn_login)){
             if (username.equals("admin") && password.equals("admin123")){
