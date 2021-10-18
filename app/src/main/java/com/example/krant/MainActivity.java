@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.krant.Adapter.NewsAdapter;
 import com.example.krant.Model.NewsModel;
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private NewsAdapter adapter;
-    private ArrayList<NewsModel> dataArraylist;
+    private ArrayList<NewsModel> dataNews;
 
     private Button btn_note;
 
@@ -39,7 +40,18 @@ public class MainActivity extends AppCompatActivity {
 
         getData();
 
-        adapter = new NewsAdapter(dataArraylist);
+        adapter = new NewsAdapter(dataNews, new NewsAdapter.Callback() {
+            @Override
+            public void onClick(int position) {
+
+                Toast.makeText(getApplicationContext(), "position "+ dataNews.get(position), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("title", dataNews.get(position).getTitle());
+                intent.putExtra("description", dataNews.get(position).getDescription());
+                intent.putExtra("image", dataNews.get(position).getImage());
+                startActivity(intent);
+            }
+        });
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setAdapter(adapter);
@@ -64,19 +76,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getData(){
-        dataArraylist = new ArrayList<>();
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
-        dataArraylist.add(new NewsModel("title", "description", "image"));
+        dataNews = new ArrayList<>();
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
+        dataNews.add(new NewsModel("title", "description", "image"));
     }
 }
