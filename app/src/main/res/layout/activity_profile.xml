@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/profile_bg_ellipse">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="35dp"
+
+        android:text="Profile"
+        android:textSize="36sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        />
+
+    <LinearLayout
+        android:layout_width="345dp"
+        android:layout_height="600dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="44dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="First Name :"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="10dp"
+
+            android:text="___________________________________________"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="37dp"
+
+            android:text="Last Name :"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="10dp"
+
+            android:text="___________________________________________"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="37dp"
+
+            android:text="Email :"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="10dp"
+
+            android:text="___________________________________________"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+        <Button
+            android:layout_marginTop="86dp"
+            android:layout_width="169dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:textAllCaps="false"
+            android:background="@drawable/main_rounded_button_1"
+
+            android:text="Edit Profile"
+            android:textSize="23sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/roboto"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

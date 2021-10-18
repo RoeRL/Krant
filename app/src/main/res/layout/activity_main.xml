@@ -17,7 +17,7 @@
         android:layout_marginLeft="13dp"
         android:layout_marginTop="35dp"
 
-        android:text="WELCOME"
+        android:text="Profile"
         android:textSize="36sp"
         android:textColor="@color/black"
         android:fontFamily="@font/roboto"
@@ -34,6 +34,7 @@
             android:layout_width="169dp"
             android:layout_height="61dp"
 
+            android:textAllCaps="false"
             android:background="@drawable/main_rounded_button_1"
 
             android:text="Profile"
@@ -48,6 +49,7 @@
             android:layout_width="169dp"
             android:layout_height="61dp"
 
+            android:textAllCaps="false"
             android:background="@drawable/main_rounded_button_1"
 
             android:text="Notes"
@@ -64,6 +66,7 @@
         android:layout_width="184dp"
         android:layout_height="42dp"
 
+        android:textAllCaps="false"
         android:background="@drawable/main_rounded_button_2"
 
         android:text="Berita Terkini"
@@ -80,7 +83,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
-            android:layout_width="match_parent"
+            android:layout_width="340dp"
             android:layout_height="match_parent"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"></androidx.recyclerview.widget.RecyclerView>
