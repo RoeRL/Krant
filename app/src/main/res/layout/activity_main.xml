@@ -27,6 +27,7 @@
         android:transitionName="profile_transition"
         android:text="PROFILE" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/id_recyclerview"
         android:layout_width="match_parent"
