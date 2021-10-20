@@ -7,11 +7,22 @@
     tools:context=".NoteActivity"
     android:background="#00BCD4">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/id_recyclerview_note"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_add_note">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/btn_add_note"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="note"
-        android:layout_centerInParent="true"
-        android:textSize="40dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="New Note" />
 
 </RelativeLayout>
