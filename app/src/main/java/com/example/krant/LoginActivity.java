@@ -18,8 +18,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity{
 
-    private com.google.android.material.textfield.TextInputLayout input_email;
-    private com.google.android.material.textfield.TextInputLayout input_password;
+    private EditText input_email;
+    private EditText input_password;
     private Button btn_login;
 
     private FirebaseAuth auth;
@@ -37,8 +37,8 @@ public class LoginActivity extends AppCompatActivity{
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = input_email.getEditText().getText().toString();
-                String password = input_password.getEditText().getText().toString();
+                String email = input_email.getText().toString();
+                String password = input_password.getText().toString();
 
                 if (email.isEmpty() && password.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Masukkan username dan password anda!", Toast.LENGTH_SHORT).show();

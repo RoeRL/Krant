@@ -7,15 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".SplashScreenActivity"
     android:orientation="vertical"
-    android:background="#ADF5FF"
+    android:background="#DCFDFF"
     >
 
     <ImageView
         android:id="@+id/iv_logo_krant"
-        android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_width="403dp"
+        android:layout_height="226dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/krant_logo"
-        />
+        android:src="@drawable/logo_krant1" />
 
 </RelativeLayout>
