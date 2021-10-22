@@ -32,7 +32,7 @@ public class DetailActivity extends AppCompatActivity {
         if (bundle != null){
             title = bundle.getString("title");
             description = bundle.getString("description");
-            image = bundle.getString("imgae");
+            image = bundle.getString("image");
         }
 
         txt_title.setText(title);
