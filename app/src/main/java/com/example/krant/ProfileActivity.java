@@ -1,6 +1,5 @@
 package com.example.krant;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,9 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.krant.Class.CheckLogin;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.transition.platform.MaterialContainerTransform;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,7 +22,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -32,8 +34,13 @@ public class ProfileActivity extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private FirebaseFirestore firestore;
-
     private String user_id;
+    private GoogleSignInAccount signInAccount;
+
+    private String username;
+    private String email;
+
+    private CheckLogin checkLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,21 +57,47 @@ public class ProfileActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
 
-        user_id = auth.getCurrentUser().getUid();
+        signInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 
-        DocumentReference documentReference = firestore.collection("data_users").document(user_id);
-        documentReference.addSnapshotListener( new EventListener<DocumentSnapshot>() {
+
+        if (!CheckLogin.getResult()) {
+            txt_username.setText(signInAccount.getDisplayName());
+            txt_email.setText(signInAccount.getEmail());
+        }
+        else{
+            user_id = auth.getCurrentUser().getUid();
+            DocumentReference documentReference = firestore.collection("data_users").document(user_id);
+            documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    username = value.getString("username");
+                    email = value.getString("email");
+
+                    txt_username.setText(username);
+                    txt_email.setText(email);
+                }
+            });
+        }
+        btn_edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                txt_username.setText(value.getString("username"));
-                txt_email.setText(value.getString("email"));
+            public void onClick(View v) {
+                if (!CheckLogin.getResult()){
+                    Toast.makeText(getApplicationContext(), "Tidak bisa edit profle, Karena anda login dengan google!", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent intent = new Intent(getApplicationContext(), EditProfileActivity.class);
+                    intent.putExtra("username", username);
+                    intent.putExtra("email", email);
+                    startActivity(intent);
+                }
+
             }
         });
-
 
         btn_logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                firestore.disableNetwork();
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);

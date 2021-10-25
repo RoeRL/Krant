@@ -14,10 +14,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.androidnetworking.AndroidNetworking;
+import com.androidnetworking.common.Priority;
+import com.androidnetworking.error.ANError;
+import com.androidnetworking.interfaces.JSONArrayRequestListener;
+import com.androidnetworking.interfaces.JSONObjectRequestListener;
 import com.example.krant.Adapter.NewsAdapter;
 import com.example.krant.Model.NewsModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -28,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<NewsModel> dataNews;
 
     private Button btn_note;
+    private Button btn_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,26 +47,78 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.id_recyclerview);
         btn_note = findViewById(R.id.btn_note);
+        btn_profile = findViewById(R.id.btn_profile);
 
         getData();
 
-        adapter = new NewsAdapter(dataNews, new NewsAdapter.Callback() {
+        btn_note.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(int position) {
-
-                Toast.makeText(getApplicationContext(), "position "+ dataNews.get(position), Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
-                intent.putExtra("title", dataNews.get(position).getTitle());
-                intent.putExtra("description", dataNews.get(position).getDescription());
-                intent.putExtra("image", dataNews.get(position).getImage());
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), NoteActivity.class);
                 startActivity(intent);
             }
         });
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(layoutManager);
+        btn_profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
 
+    }
+
+    private void getData(){
+        AndroidNetworking.get("https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=be09ca37822e492480ded90ae3697682")
+                .addPathParameter("pageNumber", "0")
+                .addQueryParameter("limit", "3")
+                .addHeaders("token", "1234")
+                .setTag("test")
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONObject(new JSONObjectRequestListener() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        try {
+                            dataNews = new ArrayList<>();
+
+                            JSONArray jsonArray = response.getJSONArray("articles");
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                JSONObject object = jsonArray.getJSONObject(i);
+                                String title = object.getString("title");
+                                String content = object.getString("content");
+                                String image = object.getString("urlToImage");
+
+                                dataNews.add(new NewsModel(title, content, image));
+                            }
+
+                            adapter = new NewsAdapter(dataNews, new NewsAdapter.Callback() {
+                                @Override
+                                public void onClick(int position) {
+
+                                    Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                                    intent.putExtra("title", dataNews.get(position).getTitle());
+                                    intent.putExtra("description", dataNews.get(position).getDescription());
+                                    intent.putExtra("image", dataNews.get(position).getImage());
+                                    startActivity(intent);
+                                }
+                            });
+
+                            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+                            recyclerView.setAdapter(adapter);
+                            recyclerView.setLayoutManager(layoutManager);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(ANError anError) {
+
+                    }
+                });
     }
 
     private void config() {
@@ -74,22 +136,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
         Bundle bundle = ActivityOptions.makeSceneTransitionAnimation(this, btn_note, "profile_transition").toBundle();
         startActivity(intent, bundle);
-    }
-
-    private void getData(){
-        dataNews = new ArrayList<>();
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
-        dataNews.add(new NewsModel("title", "description", "image"));
     }
 }

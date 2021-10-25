@@ -3,16 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/drawable/login_button.xml" value="0.2518518518518518" />
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_detail.xml" value="0.33" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_detail_note_editor.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_edit_profile.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_login.xml" value="0.20615384615384616" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_main.xml" value="0.19537037037037036" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_note.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_note_editor.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_profile.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/fragment_account.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/fragment_home.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/fragment_note.xml" value="0.19537037037037036" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/item_list.xml" value="0.25" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/note_list.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.209375" />
+        <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/layout/activity_login.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/KrantFinal/app/src/main/res/drawable/main_rounded_button_1.xml" value="0.290625" />
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/KrantFinal/app/src/main/res/layout/activity_login.xml" value="0.536" />
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/KrantFinal/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/KrantFinal/app/src/main/res/layout/activity_profile.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/KrantFinal/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/KrantFinal/app/src/main/res/layout/item_list.xml" value="0.27447916666666666" />
-        <entry key="..\:/Users/aryos/AndroidStudioProjects/KrantFinal/app/src/main/res/layout/note_list.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

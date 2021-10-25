@@ -60,7 +60,6 @@ public class DetailNoteEditorActivity extends AppCompatActivity {
 
                 realmHelper.Update(id, title, content);
                 Toast.makeText(getApplicationContext(), "Update successfully", Toast.LENGTH_SHORT).show();
-                finish();
 
             }
         });
