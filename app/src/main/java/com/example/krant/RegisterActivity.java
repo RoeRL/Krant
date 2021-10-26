@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,9 +28,9 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private com.google.android.material.textfield.TextInputLayout input_username_register;
-    private com.google.android.material.textfield.TextInputLayout input_email_register;
-    private com.google.android.material.textfield.TextInputLayout input_password_register;
+    private EditText input_username_register;
+    private EditText input_email_register;
+    private EditText input_password_register;
     private Button btn_register;
     private TextView btn_login;
 
@@ -54,9 +55,9 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = input_username_register.getEditText().getText().toString();
-                String email = input_email_register.getEditText().getText().toString();
-                String password = input_password_register.getEditText().getText().toString();
+                String username = input_username_register.getText().toString();
+                String email = input_email_register.getText().toString();
+                String password = input_password_register.getText().toString().trim();
 
                 if (username.isEmpty() && email.isEmpty() && password.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Masukkan username email dan password anda!", Toast.LENGTH_SHORT).show();
@@ -69,6 +70,9 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else if (password.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Masukkan password anda!", Toast.LENGTH_SHORT).show();
+                }
+                else if (password.length() < 8){
+                    Toast.makeText(getApplicationContext(), "passoword harus 8 karakter atau lebih!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

@@ -47,7 +47,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public void onBindViewHolder(@NonNull NewsAdapter.NewsViewHolder holder, int position) {
 
         holder.txt_title.setText(listData.get(position).getTitle());
-        holder.txt_description.setText(listData.get(position).getDescription());
         Picasso.get()
                 .load(listData.get(position).getImage())
                 .into(holder.img_image);
@@ -61,7 +60,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public class NewsViewHolder extends RecyclerView.ViewHolder{
 
         private TextView txt_title;
-        private TextView txt_description;
         private ImageView img_image;
         private CardView cardView;
 
@@ -69,7 +67,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
             super(itemView);
 
             txt_title = itemView.findViewById(R.id.txt_title_news);
-            txt_description = itemView.findViewById(R.id.txt_description_news);
             img_image = itemView.findViewById(R.id.img_image_news);
             cardView = itemView.findViewById(R.id.id_cardview);
 
