@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NoteEditorActivity">
+    tools:context=".NoteEditorActivity"
+    android:background="@drawable/activity_edit_note_ellipse">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/btn_save_note">
+        android:layout_width="350dp"
+        android:layout_height="575dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/activity_edit_note_rectangle">
 
         <EditText
             android:id="@+id/input_title_note"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
-            android:hint="title" />
+            android:hint="title"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/input_content_note"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_below="@+id/input_title_note"
+            android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:ems="20"
-            android:hint="description" />
+            android:hint="description"
+            android:textColor="@color/black" />
 
     </RelativeLayout>
 
     <Button
         android:id="@+id/btn_save_note"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        android:text="save" />
+        android:layout_marginBottom="35dp"
+        android:backgroundTint="@color/white"
+        android:text="save"
+        android:textColor="@color/black" />
 
 </RelativeLayout>

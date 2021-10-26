@@ -1,28 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NoteActivity"
-    android:background="#00BCD4">
+    android:background="@drawable/note_bg_ellipse">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/id_recyclerview_note"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/btn_add_note">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="35dp"
+
+        android:text="Notes"
+        android:textSize="36sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="350dp"
+        android:layout_height="550dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/id_recyclerview_note"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/btn_add_note">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_add_note"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:text="New Note" />
+        android:layout_width="169dp"
+        android:layout_height="61dp"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/white"
+        android:layout_margin="10dp"
+
+        android:text="New Note +"
+        android:textSize="23sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        />
+
 
 </RelativeLayout>
