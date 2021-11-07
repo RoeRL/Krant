@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/drawable/progress_dialog_background.xml" value="0.22552083333333334" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_detail.xml" value="0.20615384615384616" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_edit_profile.xml" value="0.20615384615384616" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_login.xml" value="0.20615384615384616" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_note.xml" value="0.20615384615384616" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_register.xml" value="0.20615384615384616" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/activity_web_view.xml" value="0.209375" />
+        <entry key="..\:/SMK RUS KUDUS/Project - SMK RUS/Android Studio/Project/Krant/app/src/main/res/layout/progress_dialog.xml" value="0.20615384615384616" />
         <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/drawable/login_button.xml" value="0.2518518518518518" />
         <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/aryos/AndroidStudioProjects/Krant/app/src/main/res/layout/activity_splash_screen.xml" value="0.27447916666666666" />

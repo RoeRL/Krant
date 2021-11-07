@@ -106,6 +106,15 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+        finish();
+        super.onBackPressed();
+    }
+
     private void config(){
         findViewById(android.R.id.content).setTransitionName("profile_transition");
         setEnterSharedElementCallback(new MaterialContainerTransformSharedElementCallback());
