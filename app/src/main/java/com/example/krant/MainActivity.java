@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -88,9 +89,10 @@ public class MainActivity extends AppCompatActivity {
                                 JSONObject object = jsonArray.getJSONObject(i);
                                 String title = object.getString("title");
                                 String content = object.getString("content");
+                                String url = object.getString("url");
                                 String image = object.getString("urlToImage");
 
-                                dataNews.add(new NewsModel(title, content, image));
+                                dataNews.add(new NewsModel(title, content, url, image));
                             }
 
                             adapter = new NewsAdapter(dataNews, new NewsAdapter.Callback() {
@@ -100,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                                     Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                                     intent.putExtra("title", dataNews.get(position).getTitle());
                                     intent.putExtra("description", dataNews.get(position).getDescription());
+                                    intent.putExtra("url", dataNews.get(position).getUrl());
                                     intent.putExtra("image", dataNews.get(position).getImage());
                                     startActivity(intent);
                                 }

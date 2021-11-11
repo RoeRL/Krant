@@ -40,20 +40,22 @@
     <Button
         android:id="@+id/btn_add_note"
 
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
         android:layout_width="169dp"
         android:layout_height="61dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/white"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
 
-        android:text="New Note +"
-        android:textSize="23sp"
-        android:textColor="@color/black"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/white"
         android:fontFamily="@font/roboto"
-        />
+        android:text="New Note +"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="23sp" />
 
 
 </RelativeLayout>

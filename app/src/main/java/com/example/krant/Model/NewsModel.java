@@ -4,11 +4,13 @@ public class NewsModel {
 
     private String title;
     private String description;
+    private String url;
     private String image;
 
-    public NewsModel(String title, String description, String image) {
+    public NewsModel(String title, String description, String url, String image) {
         this.title = title;
         this.description = description;
+        this.url = url;
         this.image = image;
     }
 
@@ -26,6 +28,14 @@ public class NewsModel {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getImage() {

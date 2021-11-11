@@ -5,6 +5,7 @@ import static android.content.ContentValues.TAG;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,6 +39,8 @@ public class RegisterActivity extends AppCompatActivity {
     private FirebaseFirestore firestore;
     private String user_id;
 
+    private ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +54,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
+
+        progressDialog = new ProgressDialog(RegisterActivity.this);
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +80,8 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "passoword harus 8 karakter atau lebih!", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    progressDialog.show();
+                    progressDialog.setMessage("Loading...");
                     auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -92,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         Log.d("ppppppppppppp", "onSuccess: insert successfully");
                                     }
                                 });
-
+                                progressDialog.dismiss();
 
                                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                 startActivity(intent);

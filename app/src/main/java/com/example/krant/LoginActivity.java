@@ -3,6 +3,7 @@ package com.example.krant;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity{
     private GoogleSignInClient mGoogleSignInClient;
     private int RC_SIGN_IN = 123;
 
+    private ProgressDialog progressDialog;
     private CheckLogin checkLogin;
 
     @Override
@@ -52,12 +54,15 @@ public class LoginActivity extends AppCompatActivity{
         btn_login_google = findViewById(R.id.btn_login_google);
 
         auth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(LoginActivity.this);
 
         LoginGoogle();
         btn_login_google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               signIn();
+                progressDialog.show();
+                progressDialog.setMessage("Loading...");
+                signIn();
             }
         });
 
@@ -77,6 +82,8 @@ public class LoginActivity extends AppCompatActivity{
                     Toast.makeText(getApplicationContext(), "Masukkan password anda!", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    progressDialog.show();
+                    progressDialog.setMessage("Loading...");
                     auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -85,6 +92,7 @@ public class LoginActivity extends AppCompatActivity{
 
                                 CheckLogin.setResult(true);
 
+                                progressDialog.dismiss();
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(intent);
                                 finish();
@@ -157,6 +165,7 @@ public class LoginActivity extends AppCompatActivity{
 
                             CheckLogin.setResult(false);
 
+                            progressDialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Login berhasil!", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
@@ -169,4 +178,9 @@ public class LoginActivity extends AppCompatActivity{
                 });
     }
 
+    @Override
+    public void onBackPressed() {
+        finish();
+        super.onBackPressed();
+    }
 }
