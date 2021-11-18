@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NoteActivity"
-    android:background="@drawable/note_bg_ellipse">
+    android:background="#DCFDFF">
 
     <TextView
         android:layout_width="wrap_content"

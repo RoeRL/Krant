@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity"
     android:orientation="vertical"
-    android:background="@drawable/profile_bg_ellipse">
+    android:background="#DCFDFF">
 
     <TextView
         android:id="@+id/title_profile"
