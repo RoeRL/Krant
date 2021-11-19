@@ -61,8 +61,8 @@ public class ProfileActivity extends AppCompatActivity {
 
 
 //        if (!CheckLogin.getResult()) {
-            txt_username.setText(signInAccount.getDisplayName());
-            txt_email.setText(signInAccount.getEmail());
+//            txt_username.setText(signInAccount.getDisplayName());
+//            txt_email.setText(signInAccount.getEmail());
 //        }
 //        if(CheckLogin.getResult().equals(true)){
             user_id = auth.getCurrentUser().getUid();
