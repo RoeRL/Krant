@@ -24,11 +24,12 @@
         android:fontFamily="@font/roboto"/>
 
     <LinearLayout
-        android:layout_width="345dp"
-        android:layout_height="600dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="44dp"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
+        android:layout_marginHorizontal="18dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,7 +49,7 @@
 
             android:paddingTop="10dp"
 
-            android:text="___________________________________________"
+            android:text="- - - - - - - "
             android:textSize="18sp"
             android:textColor="@color/black"
             android:fontFamily="@font/roboto"
@@ -74,44 +75,44 @@
 
             android:paddingTop="10dp"
 
-            android:text="___________________________________________"
+            android:text="- - - - - - - "
             android:textSize="18sp"
             android:textColor="@color/black"
             android:fontFamily="@font/roboto"
             />
 
-        <Button
-            android:id="@+id/btn_edit_profile"
-
-            android:layout_marginTop="180dp"
-            android:layout_width="169dp"
-            android:layout_height="61dp"
-            android:layout_gravity="center"
-            android:textAllCaps="false"
-            android:backgroundTint="@color/white"
-
-            android:text="Edit Profile"
-            android:textSize="23sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto"
-            />
-
-        <Button
-            android:id="@+id/btn_logout"
-
-            android:layout_marginTop="10dp"
-            android:layout_width="169dp"
-            android:layout_height="61dp"
-            android:layout_gravity="center"
-            android:textAllCaps="false"
-            android:backgroundTint="@color/white"
-
-            android:text="Log Out"
-            android:textSize="23sp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/roboto"
-            />
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_edit_profile"
+
+        android:layout_marginTop="32dp"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/white"
+
+        android:text="Edit Profile"
+        android:textSize="23sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        />
+
+    <Button
+        android:id="@+id/btn_logout"
+
+        android:layout_marginTop="10dp"
+        android:layout_width="169dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/white"
+
+        android:text="Log Out"
+        android:textSize="23sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/roboto"
+        />
 
 </LinearLayout>

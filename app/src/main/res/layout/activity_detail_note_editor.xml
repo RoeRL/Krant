@@ -8,16 +8,19 @@
     tools:context=".DetailNoteEditorActivity"
     android:background="#DCFDFF">
 
-    <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="575dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/activity_edit_note_rectangle">
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="72dp"
+        android:background="@drawable/activity_edit_note_rectangle"
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/input_title_note_detil"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
@@ -30,7 +33,7 @@
 
         <EditText
             android:id="@+id/input_content_note_detil"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/input_title_note_detil"
             android:layout_centerHorizontal="true"
@@ -40,36 +43,64 @@
             android:hint="description"
             android:textColor="@color/black" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/border_button"
-        android:layout_width="350dp"
+    <Button
+        android:id="@+id/btn_save_note_detil"
+
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="640dp"
-        android:layout_centerHorizontal="true">
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:text="save"
+        android:textColor="@color/black" />
 
-        <Button
-            android:layout_alignParentLeft="true"
-            android:layout_margin="10dp"
-            android:id="@+id/btn_save_note_detil"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:text="save"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/white"/>
+    <Button
+        android:id="@+id/btn_delete_note_detil"
 
-        <Button
-            android:layout_alignParentRight="true"
-            android:layout_margin="10dp"
-            android:id="@+id/btn_delete_note_detil"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:backgroundTint="@color/white"
-            android:text="delete" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:text="delete"
+        android:textColor="@color/black" />
 
-    </RelativeLayout>
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/border_button"-->
+
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginHorizontal="60dp"-->
+<!--        android:layout_marginBottom="48dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_save_note_detil"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentLeft="true"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:text="save"-->
+<!--            android:textColor="@color/black" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_delete_note_detil"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:backgroundTint="@color/white"-->
+<!--            android:text="delete"-->
+<!--            android:textColor="@color/black" />-->
+
+<!--    </RelativeLayout>-->
 
 </RelativeLayout>

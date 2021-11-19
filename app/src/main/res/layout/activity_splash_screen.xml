@@ -12,9 +12,10 @@
 
     <ImageView
         android:id="@+id/iv_logo_krant"
+
         android:layout_width="403dp"
         android:layout_height="226dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/logo_krant1" />
+        android:src="@drawable/logo_krant2" />
 
 </RelativeLayout>

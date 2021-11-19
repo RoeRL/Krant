@@ -7,13 +7,10 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/id_cardview"
 
-        android:layout_width="270dp"
-        android:layout_height="170dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="7dp"
+        android:layout_marginBottom="10sp"
         app:cardCornerRadius="42dp"
         android:backgroundTint="@color/white">
 

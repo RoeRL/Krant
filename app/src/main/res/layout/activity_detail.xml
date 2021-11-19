@@ -9,9 +9,12 @@
     android:background="#DCFDFF">
 
     <LinearLayout
-        android:layout_width="360dp"
-        android:layout_height="650dp"
-        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="18dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="72dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/detail_bg_rectangle"
         android:orientation="vertical">
 
@@ -52,25 +55,19 @@
             android:textColor="#000000"
             android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/btn_more_detail"
-
-            android:layout_width="wrap_content"
-            android:layout_height="61dp"
-            android:layout_centerHorizontal="true"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/roboto"
-            android:text="Selengkapnya"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="23sp" />
-
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_more_detail"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:text="selengkapnya"
+        android:textColor="@color/black" />
 
 </RelativeLayout>
