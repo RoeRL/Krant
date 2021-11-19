@@ -60,11 +60,11 @@ public class ProfileActivity extends AppCompatActivity {
         signInAccount = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 
 
-        if (!CheckLogin.getResult()) {
+//        if (!CheckLogin.getResult()) {
             txt_username.setText(signInAccount.getDisplayName());
             txt_email.setText(signInAccount.getEmail());
-        }
-        else{
+//        }
+//        if(CheckLogin.getResult().equals(true)){
             user_id = auth.getCurrentUser().getUid();
             DocumentReference documentReference = firestore.collection("data_users").document(user_id);
             documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
@@ -77,7 +77,10 @@ public class ProfileActivity extends AppCompatActivity {
                     txt_email.setText(email);
                 }
             });
-        }
+//        }
+
+        Log.d("ppppp", "onCreate: " + username +" "+ email);
+
         btn_edit_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
